@@ -1,0 +1,18 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% if page.layout != "cv" %}
+
+    <link rel="stylesheet" href="/assets/css/site.css">
+  {% else %}
+    <link href="media/{{ site.style }}-screen.css" type="text/css" rel="stylesheet" media="screen">
+    <link href="media/{{ site.style }}-print.css" type="text/css" rel="stylesheet" media="print">
+  {% endif %}
+  <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <title>
+    {{ page.title }} {% if site.title != page.title %} | {{ site.title }} {% endif %}
+  </title>
+
+</head>
