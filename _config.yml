@@ -47,6 +47,8 @@ listed_pages:
    # url: /about.html
  - name: Resume
    url: /assets/Resume.pdf
+ - name: WordHex
+   url: /wordhex.html
 
 # Exclude from processing.
 # The following items will not be processed, by default.
