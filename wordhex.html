@@ -12,10 +12,7 @@ title: Word Hex
   var extra;
   function wordHex() {
     clear()
-    // console.log(document.getElementsByName("input").value);
     var word = document.getElementById("input").value;
-    // console.log(word);
-    // console.log("Hello World");
     var binary = "";
     for (letter in word) {
       var b_letter = word[letter].charCodeAt(0).toString(2);
@@ -23,16 +20,12 @@ title: Word Hex
         b_letter = "0" + b_letter;
       }
       binary += b_letter
-      // console.log(b_letter);
     }
-    // console.log(binary);
     hex_groups = binary.match(/.{1,4}/g)
-    // console.log(hex_groups);
     var hex = "";
     for (group in hex_groups) {
       hex += hex_keys[hex_groups[group]];
     }
-    // console.log(hex);
     hex_groups = hex.match(/.{1,6}/g);
     console.log(hex_groups)
     paint();
@@ -40,7 +33,7 @@ title: Word Hex
 
   function paint(){
     var width = document.getElementById('color-container').clientWidth;
-    var height = document.getElementById('color-container').offsetHeight;
+    var height = document.getElementById('color-container').clientHeight;
     console.log(height);
     var element_size = width / hex_groups.length
     for (color in hex_groups) {
@@ -55,7 +48,6 @@ title: Word Hex
       else
         div.innerHTML = "<h1 style='margin: 0; top: 50%; left: 50%;'>+"+hex_groups[color]+"</h1>";
       document.getElementById('color-container').appendChild(div)
-      console.log(element_size);
     }
   }
 
@@ -70,7 +62,7 @@ title: Word Hex
   <br>
   <p>Enter a word</p>
   <input type="text" id="input" value="" placeholder="Enter a word or phrase">
-  <button type="button" name="button" onclick="wordHex()" >Click me</button>
-  <div id="color-container" style="margin-left:100px; margin-right:100px; width: auto; height: 500px">
+  <button type="button" name="button" onclick="wordHex()" style="margin-bottom:10px">Translate</button>
+  <div id="color-container" class="color-container">
   </div>
 </div>
